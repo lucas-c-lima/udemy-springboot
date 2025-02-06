@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CursoUdemyApplication<curso-udemy>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proj.curso_udemy.CursoUdemyApplication",
+            "projectName": "curso-udemy",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
