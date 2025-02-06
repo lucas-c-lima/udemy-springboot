@@ -22,6 +22,8 @@ public class CursoUdemyApplication implements CommandLineRunner {
 
 		Curso c = new Curso();
 
+		// TESTE PARA BRANCH DEV NO GIT!!!
+
 		c.mostraDados();
 
 		LOG.info("Finalizando o RUN");
