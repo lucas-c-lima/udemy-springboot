@@ -2,6 +2,8 @@ package com.curso.database.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,6 +15,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PostPersist;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
@@ -45,6 +49,9 @@ public class Curso {
 	
 	@Transient
 	private BigDecimal valorDoCurso;
+	
+	@OneToMany(mappedBy = "curso")
+	private List<Aluno> alunos = new ArrayList<>();
 
 	@PostPersist
 	private void aposPersistirDados() {
@@ -120,6 +127,14 @@ public class Curso {
 
 	public void setValorDoCurso(BigDecimal valorDoCurso) {
 		this.valorDoCurso = valorDoCurso;
+	}
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
 	}
 
 	@Override
